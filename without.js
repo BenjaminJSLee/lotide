@@ -1,6 +1,6 @@
 const eqArrays = (arr1, arr2) => {
   if (arr1.length !== arr2.length) return false;
-  for(let i = 0; i < arr1.length; i++) {
+  for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] !== arr2[i]) return false;
   }
   return true;
@@ -16,10 +16,10 @@ const assertArraysEqual = (actual,expected) => {
 
 const without = (srcArr,rmvArr) => {
   let newArr = [];
-  for(let val of srcArr){
+  for (let val of srcArr) {
     newArr.push(val);
-    for(let rmvVal of rmvArr){
-      if(rmvVal === val){
+    for (let rmvVal of rmvArr) {
+      if (rmvVal === val) {
         newArr.pop();
         break;
       }
