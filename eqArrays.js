@@ -6,10 +6,10 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const eqArrays = (actual, expected) => {
-  if (actual.length !== expected.length) return false;
-  for(let i = 0; i < actual.length; i++) {
-    if (actual[i] !== expected[i]) return false;
+const eqArrays = (arr1, arr2) => {
+  if (arr1.length !== arr2.length) return false;
+  for(let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) return false;
   }
   return true;
 };
