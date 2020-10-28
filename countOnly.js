@@ -8,10 +8,10 @@ const assertEqual = function(actual, expected) {
 
 const countOnly = (allItems, itemsToCount) => {
   const itemCount = {};
-  for(const item of itemsToCount) {
-    if( allItems[item] ){
+  for (const item of itemsToCount) {
+    if (allItems[item]) {
       itemCount[item] = itemCount[item] ? itemCount[item] + 1 : 1;
-    };
+    }
   }
   return itemCount;
 };
