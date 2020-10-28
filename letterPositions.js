@@ -16,10 +16,10 @@ const assertArraysEqual = (actual,expected) => {
 
 const letterPositions = (sentence) => {
   const results = {};
-  for(let i = 0; i < sentence.length; i++){
+  for (let i = 0; i < sentence.length; i++) {
     let char = sentence[i];
-    if( char !== ' ' ){
-      if(results[char]){
+    if (char !== ' ') {
+      if (results[char]) {
         results[char].push(i);
       } else {
         results[char] = [i];
@@ -30,9 +30,17 @@ const letterPositions = (sentence) => {
 };
 
 const test = "hello";
+const testWithSpace = "lighthouse in the house";
 const testPos = letterPositions(test);
+const testWithSpacePos = letterPositions(testWithSpace);
 
 assertArraysEqual(testPos["h"],[0]);
 assertArraysEqual(testPos["e"], [1]);
 assertArraysEqual(testPos["l"], [2,3]);
 assertArraysEqual(testPos["o"], [4]);
+
+assertArraysEqual(testWithSpacePos["l"], [0]);
+assertArraysEqual(testWithSpacePos["i"], [1,11]);
+assertArraysEqual(testWithSpacePos["g"], [2]);
+assertArraysEqual(testWithSpacePos["h"], [3,5,15,18]);
+assertArraysEqual(testWithSpacePos["t"], [4,14]);
