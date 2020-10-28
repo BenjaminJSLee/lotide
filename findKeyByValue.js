@@ -8,7 +8,9 @@ const assertEqual = function(actual, expected) {
 
 const findKeyByValue = (obj,val) => {
   for (let key in obj) {
-    if (/*obj.hasOwnProperty(key) && */obj[key] === val) {
+    if (/*obj.hasOwnProperty(key) && */ !(Number.isNaN(val)) && (obj[key] === val)) {
+      return key;
+    } else if (Number.isNaN(val) && Number.isNaN(obj[key])) {
       return key;
     }
   }
@@ -45,5 +47,5 @@ assertEqual(findKeyByValue(objWithWeirdVals,"weird key name"), "1-1");
 assertEqual(findKeyByValue(objWithWeirdVals,"repeating vals"), "key1");
 assertEqual(findKeyByValue(objWithWeirdVals,"empty key?"), "");
 assertEqual(findKeyByValue(objWithWeirdVals,undefined), "notDefined");
-assertEqual(findKeyByValue(objWithWeirdVals,NaN), undefined); // this happens b/c NaN cannot equal NaN
+assertEqual(findKeyByValue(objWithWeirdVals,NaN), "notANum"); // this happens b/c NaN cannot equal NaN
 assertEqual(findKeyByValue(objWithWeirdVals,null), "null");
