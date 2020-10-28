@@ -15,7 +15,7 @@ const assertArraysEqual = (actual,expected) => {
 };
 
 const middle = (arr) => {
-  if(arr.length <= 2) return [];
+  if (arr.length <= 2) return [];
   let mid, midVal;
   mid = Math.floor(arr.length / 2);
   midVal = arr.length % 2 === 1 ? [arr[mid]] : arr.slice(mid - 1,mid + 1);
@@ -25,7 +25,7 @@ const middle = (arr) => {
 const noMiddle = [1];
 const noMiddleAgain = [1,2];
 const evenLength = [1,2,3,4];
-const oddLength = [1,2,3,4,5]; 
+const oddLength = [1,2,3,4,5];
 
 assertArraysEqual(middle(noMiddle),[]);
 assertArraysEqual(middle(noMiddleAgain),[]);
