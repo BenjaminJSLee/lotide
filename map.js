@@ -37,14 +37,14 @@ const call2 = function(val) {
 };
 const call3 = () => "lolarrayruined";
 
-assertArraysEqual(test1.map(call1),[2]);
-assertArraysEqual(test2.map(call1),[]);
-assertArraysEqual(test3.map(call1),['aa','bb',6]);
+assertArraysEqual(map(test1,call1),[2]);
+assertArraysEqual(map(test2,call1),[]);
+assertArraysEqual(map(test3,call1),['aa','bb',6]);
 
-assertArraysEqual(test1.map(call2),["number"]);
-assertArraysEqual(test2.map(call2),[]);
-assertArraysEqual(test3.map(call2),['string','string','number']);
+assertArraysEqual(map(test1,call2),["number"]);
+assertArraysEqual(map(test2,call2),[]);
+assertArraysEqual(map(test3,call2),['string','string','number']);
 
-assertArraysEqual(test1.map(call3),["lolarrayruined"]);
-assertArraysEqual(test2.map(call3),[]);
-assertArraysEqual(test3.map(call3),['lolarrayruined','lolarrayruined','lolarrayruined']);
+assertArraysEqual(map(test1,call3),["lolarrayruined"]);
+assertArraysEqual(map(test2,call3),[]);
+assertArraysEqual(map(test3,call3),['lolarrayruined','lolarrayruined','lolarrayruined']);
