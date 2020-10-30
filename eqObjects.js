@@ -19,6 +19,9 @@ const eqObjects = (obj1,obj2) => {
   for (const key in obj1) {
     if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
       if (!(eqArrays(obj1[key],obj2[key]))) return false;
+    } else if ((typeof obj1[key] === "object") && (typeof obj2[key] === "object") &&
+     !Array.isArray(obj1[key]) && !Array.isArray(obj2[key])) {
+      if (!eqObjects(obj1[key],obj2[key])) return false;
     } else if (obj2[key] !== obj1[key]) return false;
   }
   return true;
@@ -39,3 +42,8 @@ assertEqual(eqObjects(cd, dc),true); // => true
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2),false); // => false
+
+const nestedObj1 = { a: { b: 1, c: 2 }, d: { e: { f: 10 }, g: 4 }, h: 1 };
+const nestedObj2 = { d: { g: 4, e: { f: 10 } }, h: 1, a: { c: 2, b: 1 } };
+
+assertEqual(eqObjects(nestedObj1, nestedObj2),true);
