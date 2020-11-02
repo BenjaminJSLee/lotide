@@ -11,25 +11,25 @@ describe("#tail", () => {
   });
   it("returns ['hey','hello'] when input is ['hi','hey','hello']", () => {
     const input = ["hi","hey","hello"];
-    const actual = tail(input)
+    const actual = tail(input);
     const expected = ["hey","hello"];
     assert.deepEqual(actual,expected);
   });
   it("returns ['hey','hello'] when input is ['hi','hey','hello']", () => {
     const input = ["hi","hey","hello"];
-    const actual = tail(input)
+    const actual = tail(input);
     const expected = ["hey","hello"];
     assert.deepEqual(actual,expected);
   });
   it("returns [] when input is [1]", () => {
     const input = [1];
-    const actual = tail(input)
+    const actual = tail(input);
     const expected = [];
     assert.deepEqual(actual,expected);
   });
   it("returns [] when input is []", () => {
     const input = [];
-    const actual = tail(input)
+    const actual = tail(input);
     const expected = [];
     assert.deepEqual(actual,expected);
   });
