@@ -3,12 +3,12 @@ const assert = require('chai').assert;
 
 describe("#head", () => {
   it("returns undefined for []", () => {
-    assert.equal(head([]),undefined);
+    assert.strictEqual(head([]),undefined);
   });
   it("returns 1 for [1]", () => {
-    assert.equal(head([1]),1);
+    assert.strictEqual(head([1]),1);
   });
   it("returns 'testing' for ['testing','stuff','like','this']", () => {
-    assert.equal(head(["testing","stuff","like","this"]),"testing");
+    assert.strictEqual(head(["testing","stuff","like","this"]),"testing");
   });
 });
