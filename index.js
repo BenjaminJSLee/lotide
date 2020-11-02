@@ -6,10 +6,10 @@ const tail   = require('./tail');
 const middle = require('./middle');
 
 module.exports = {
-  assertArraysEqual: assertArraysEqual,
-  assertEqual: assertEqual,
-  eqArrays: eqArrays,
-  head:   head,
-  tail:   tail,
-  middle: middle
+  assertArraysEqual,
+  assertEqual,
+  eqArrays,
+  head,
+  tail,
+  middle
 };
