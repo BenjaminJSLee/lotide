@@ -1,12 +1,25 @@
 const middle = require('../middle');
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 
-const noMiddle = [1];
-const noMiddleAgain = [1,2];
-const evenLength = [1,2,3,4];
-const oddLength = [1,2,3,4,5];
-
-assertArraysEqual(middle(noMiddle),[]);
-assertArraysEqual(middle(noMiddleAgain),[]);
-assertArraysEqual(middle(evenLength),[2,3]);
-assertArraysEqual(middle(oddLength),[3]);
+describe("#middle", () => {
+  it("returns [] when input is [1]", () => {
+    const actual = middle([1]);
+    const expected = [];
+    assert.deepEqual(actual,expected);
+  });
+  it("returns [] when input is [1,2]", () => {
+    const actual = middle([1,2]);
+    const expected = [];
+    assert.deepEqual(actual,expected);
+  });
+  it("returns [2,3] when input is [1,2,3,4]", () => {
+    const actual = middle([1,2,3,4]);
+    const expected = [2,3];
+    assert.deepEqual(actual,expected);
+  });
+  it("returns [3] when input is [1,2,3,4,5]", () => {
+    const actual = middle([1,2,3,4,5]);
+    const expected = [3];
+    assert.deepEqual(actual,expected);
+  });
+});
